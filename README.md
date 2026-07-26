@@ -33,21 +33,21 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> [Log logistic][log-logistic-distribution] distribution [mode][mode].
+> [Log-logistic][log-logistic-distribution] distribution [mode][mode].
 
 <!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
 
 <section class="intro">
 
-The [mode][mode] for a [log logistic][log-logistic-distribution] random variable with scale `α > 0` and shape `β > 0` is
+The [mode][mode] for a [log-logistic][log-logistic-distribution] random variable with scale `α > 0` and shape `β > 0` is
 
-<!-- <equation class="equation" label="eq:log-logistic_mode" align="center" raw="\mathop{\mathrm{mode}}\left( X \right) = {\displaystyle {\begin{cases}\alpha \left( \frac{\beta - 1}{\beta + 1} \right)^{1/\beta}\,&\beta>1\\0&\beta\leq 1\end{cases}}}" alt="Mode for a log-logistic distribution."> -->
+<!-- <equation class="equation" label="eq:log_logistic_mode" align="center" raw="\mathop{\mathrm{mode}}\left( X \right) = {\displaystyle {\begin{cases}\alpha \left( \frac{\beta - 1}{\beta + 1} \right)^{1/\beta}\,&\beta>1\\0&\beta\leq 1\end{cases}}}" alt="Mode for a log-logistic distribution."> -->
 
 ```math
 \mathop{\mathrm{mode}}\left( X \right) = {\displaystyle {\begin{cases}\alpha \left( \frac{\beta - 1}{\beta + 1} \right)^{1/\beta}\,&\beta>1\\0&\beta\leq 1\end{cases}}}
 ```
 
-<!-- <div class="equation" align="center" data-raw-text="\mathop{\mathrm{mode}}\left( X \right) = {\displaystyle {\begin{cases}\alpha \left( \frac{\beta - 1}{\beta + 1} \right)^{1/\beta}\,&amp;\beta&gt;1\\0&amp;\beta\leq 1\end{cases}}}" data-equation="eq:log-logistic_mode">
+<!-- <div class="equation" align="center" data-raw-text="\mathop{\mathrm{mode}}\left( X \right) = {\displaystyle {\begin{cases}\alpha \left( \frac{\beta - 1}{\beta + 1} \right)^{1/\beta}\,&amp;\beta&gt;1\\0&amp;\beta\leq 1\end{cases}}}" data-equation="eq:log_logistic_mode">
     <img src="https://cdn.jsdelivr.net/gh/stdlib-js/stdlib@51534079fef45e990850102147e8945fb023d1d0/lib/node_modules/@stdlib/stats/base/dists/log-logistic/mode/docs/img/equation_log_logistic_mode.svg" alt="Mode for a log-logistic distribution.">
     <br>
 </div> -->
@@ -60,19 +60,37 @@ The [mode][mode] for a [log logistic][log-logistic-distribution] random variable
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/stats-base-dists-log-logistic-mode
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import mode from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-log-logistic-mode@deno/mod.js';
+var mode = require( '@stdlib/stats-base-dists-log-logistic-mode' );
 ```
 
 #### mode( alpha, beta )
 
-Returns the [mode][mode] for a [log logistic][log-logistic-distribution] distribution with scale parameter `alpha` and shape parameter `beta`.
+Returns the [mode][mode] for a [log-logistic][log-logistic-distribution] distribution with scale parameter `alpha` and shape parameter `beta`.
 
 ```javascript
 var y = mode( 1.0, 2.0 );
@@ -143,9 +161,9 @@ y = mode( 2.0, 0.5 );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@deno/mod.js';
-import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@deno/mod.js';
-import mode from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-log-logistic-mode@deno/mod.js';
+var uniform = require( '@stdlib/random-array-uniform' );
+var logEachMap = require( '@stdlib/console-log-each-map' );
+var mode = require( '@stdlib/stats-base-dists-log-logistic-mode' );
 
 var opts = {
     'dtype': 'float64'
@@ -162,7 +180,98 @@ logEachMap( 'α: %0.4f, β: %0.4f, mode(X;α,β): %0.4f', alpha, beta, mode );
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/stats/base/dists/log-logistic/mode.h"
+```
+
+#### stdlib_base_dists_log_logistic_mode( alpha, beta )
+
+Returns the mode for a log-logistic distribution with scale `alpha` and shape `beta`.
+
+```c
+double out = stdlib_base_dists_log_logistic_mode( 1.0, 2.0 );
+// returns ~0.577
+```
+
+The function accepts the following arguments:
+
+-   **alpha**: `[in] double` scale parameter.
+-   **beta**: `[in] double` shape parameter.
+
+```c
+double stdlib_base_dists_log_logistic_mode( const double alpha, const double beta );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/stats/base/dists/log-logistic/mode.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+static double random_uniform( const double min, const double max ) {
+    double v = (double)rand() / ( (double)RAND_MAX + 1.0 );
+    return min + ( v*(max-min) );
+}
+
+int main( void ) {
+    double alpha;
+    double beta;
+    double v;
+    int i;
+
+    for ( i = 0; i < 25; i++ ) {
+        alpha = random_uniform( 0.1, 10.0 );
+        beta = random_uniform( 1.1, 10.0 );
+        v = stdlib_base_dists_log_logistic_mode( alpha, beta );
+        printf( "α: %lf, β: %lf, mode(X;α,β): %lf\n", alpha, beta, v );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section to include cited references. If references are included, add a horizontal rule *before* the section. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
@@ -189,7 +298,7 @@ logEachMap( 'α: %0.4f, β: %0.4f, mode(X;α,β): %0.4f', alpha, beta, mode );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
