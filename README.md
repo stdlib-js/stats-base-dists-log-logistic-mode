@@ -67,7 +67,7 @@ The [mode][mode] for a [log-logistic][log-logistic-distribution] random variable
 ## Usage
 
 ```javascript
-import mode from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-log-logistic-mode@esm/index.mjs';
+import mode from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-log-logistic-mode@v0.0.0-esm/index.mjs';
 ```
 
 #### mode( alpha, beta )
@@ -150,7 +150,7 @@ y = mode( 2.0, 0.5 );
 
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@esm/index.mjs';
 import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@esm/index.mjs';
-import mode from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-log-logistic-mode@esm/index.mjs';
+import mode from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-log-logistic-mode@v0.0.0-esm/index.mjs';
 
 var opts = {
     'dtype': 'float64'
